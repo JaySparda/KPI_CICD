@@ -1,7 +1,26 @@
+---
+title: KPI CICD
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 8000
+---
+
 # KPI : CICD WORKFLOW
 
 CI: ![CI](https://github.com/JaySparda/KPI_CICD/actions/workflows/ci.yml/badge.svg)
 
-CD-GHCR: ![CI](https://github.com/JaySparda/KPI_CICD/actions/workflows/cd-ghcr.yml/badge.svg)
+CD-GHCR: ![CD - Publish image to ghcr.io](https://github.com/JaySparda/KPI_CICD/actions/workflows/cd-ghcr.yml/badge.svg)
 
-Deploy HF: ![CI](https://github.com/JaySparda/KPI_CICD/actions/workflows/deploy-hf.yml/badge.svg)
+Deploy HF: ![Deploy to Hugging Face Space](https://github.com/JaySparda/KPI_CICD/actions/workflows/deploy-hf.yml/badge.svg)
+
+Employee KPI Prediction API — auto-tested, packaged, and deployed by GitHub Actions
+on every push to `main`. Open `/docs` for the interactive Swagger UI.
+
+## Pipeline
+
+| Badge        | Workflow        | What it does                                                       |
+| ------------ | --------------- | ------------------------------------------------------------------ |
+| CI           | `ci.yml`        | lint (flake8) + tests (pytest) across 3 Python versions            |
+| CD - ghcr.io | `cd-ghcr.yml`   | builds the Docker image and pushes it to GitHub Container Registry |
+| Deploy to HF | `deploy-hf.yml` | deploys the service to a live Hugging Face Space                   |
